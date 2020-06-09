@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "declaration": true,
+    "strict": true,
+    "outDir": "./lib",
+    "moduleResolution": "node",
+    "removeComments": true,
+    "sourceMap": false,
+    "jsx": "react",
+    "types": ["node", "jest"],
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noImplicitAny": false
+  },
+  "include": ["src/**/*", "*.d.ts"],
+  "exclude": [
+    "node_modules",
+    "lib",
+    ".storybook",
+    "**/*.stories.tsx",
+    "**/*.test.tsx",
+    "src/setupTests.ts",
+    "src/**/*.stories.tsx"
+  ],
+  "awesomeTypescriptLoaderOptions": {
+    "useBabel": true,
+    "errorsAsWarnings": false,
+    "babelCore": "@babel/core"
+  }
+}

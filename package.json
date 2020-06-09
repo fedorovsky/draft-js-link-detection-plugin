@@ -1,0 +1,76 @@
+{
+  "name": "draft-js-link-detection-plugin",
+  "version": "0.0.0",
+  "description": "draft-js-link-detection-plugin",
+  "keywords": [
+    "react",
+    "typescript",
+    "draft-js",
+    "draft-js-plugin"
+  ],
+  "homepage": "https://github.com/fedorovsky/draft-js-link-detection-plugin",
+  "bugs": {
+    "url": "https://github.com/fedorovsky/draft-js-link-detection-plugin/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:fedorovsky/draft-js-link-detection-plugin.git"
+  },
+  "license": "MIT",
+  "author": "Anton Fedorovskyi",
+  "main": "./lib/plugin/draft-js-link-detection-plugin.js",
+  "types": "./lib/plugin/draft-js-link-detection-plugin.d.ts",
+  "scripts": {
+    "test": "jest --coverage --verbose",
+    "tsc": "tsc",
+    "tsc:watch": "tsc -w",
+    "build": "npm-run-all clean tsc",
+    "storybook": "start-storybook --port 5000",
+    "prettier": "prettier --write \"**/*.{ts,tsx}\"",
+    "lint": "eslint \"src/**/**.{ts,tsx}\"",
+    "clean": "rimraf ./lib",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@types/draft-js": "^0.10.40",
+    "@types/linkify-it": "^2.1.0",
+    "linkify-it": "^3.0.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@storybook/addon-storysource": "^5.3.13",
+    "@storybook/react": "^5.3.13",
+    "@types/jest": "^25.1.3",
+    "@types/node": "^13.7.4",
+    "@types/react-modal": "^3.10.5",
+    "@types/styled-components": "^5.0.0",
+    "@typescript-eslint/eslint-plugin": "^2.20.0",
+    "@typescript-eslint/parser": "^2.20.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.6",
+    "chai": "^4.2.0",
+    "draft-js": "^0.11.6",
+    "draft-js-plugins-editor": "^3.0.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-import-resolver-typescript": "^2.0.0",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-json": "^2.0.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3",
+    "install": "^0.13.0",
+    "jest": "^25.1.0",
+    "npm": "^6.13.7",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^25.2.1",
+    "typescript": "^3.7.5"
+  }
+}

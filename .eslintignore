@@ -1,0 +1,10 @@
+
+node_modules/**
+lib/**
+
+# Ignore stories
+*.stories.tsx
+
+# Ignore tests
+__tests__
+*.test.ts
