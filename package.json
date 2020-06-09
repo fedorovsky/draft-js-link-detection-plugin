@@ -1,12 +1,12 @@
 {
   "name": "draft-js-link-detection-plugin",
-  "version": "0.0.0",
+  "version": "0.0.1-0",
   "description": "draft-js-link-detection-plugin",
   "keywords": [
-    "react",
-    "typescript",
     "draft-js",
-    "draft-js-plugin"
+    "draft-js-plugin",
+    "react",
+    "typescript"
   ],
   "homepage": "https://github.com/fedorovsky/draft-js-link-detection-plugin",
   "bugs": {
@@ -21,15 +21,15 @@
   "main": "./lib/plugin/draft-js-link-detection-plugin.js",
   "types": "./lib/plugin/draft-js-link-detection-plugin.d.ts",
   "scripts": {
+    "build": "npm-run-all clean tsc",
+    "clean": "rimraf ./lib",
+    "lint": "eslint \"src/**/**.{ts,tsx}\"",
+    "prepublishOnly": "npm run build",
+    "prettier": "prettier --write \"**/*.{ts,tsx}\"",
+    "storybook": "start-storybook --port 5000",
     "test": "jest --coverage --verbose",
     "tsc": "tsc",
-    "tsc:watch": "tsc -w",
-    "build": "npm-run-all clean tsc",
-    "storybook": "start-storybook --port 5000",
-    "prettier": "prettier --write \"**/*.{ts,tsx}\"",
-    "lint": "eslint \"src/**/**.{ts,tsx}\"",
-    "clean": "rimraf ./lib",
-    "prepublishOnly": "npm run build"
+    "tsc:watch": "tsc -w"
   },
   "dependencies": {
     "@types/draft-js": "^0.10.40",
