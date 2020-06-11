@@ -1,5 +1,7 @@
 # draft-js-link-detection-plugin
 
+### [Demo page](https://fedorovsky.github.io/draft-js-link-detection-plugin/?path=/story/components--editor)
+
 ### Installation:
 ```npm i draft-js-link-detection-plugin```
 
