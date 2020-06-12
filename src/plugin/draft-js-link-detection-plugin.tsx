@@ -25,7 +25,6 @@ export function editorStateSettingLink(
   data: LinkData,
 ) {
   const contentState = editorState.getCurrentContent();
-  console.log('contentState', contentState);
   const entityKey = getCurrentLinkEntityKey(editorState);
 
   let nextEditorState = editorState;
