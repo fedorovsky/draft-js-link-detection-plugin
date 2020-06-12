@@ -23,14 +23,14 @@
   "scripts": {
     "build": "npm-run-all clean tsc",
     "clean": "rimraf ./lib",
+    "deploy-storybook": "storybook-to-ghpages",
     "lint": "eslint \"src/**/**.{ts,tsx}\"",
     "prepublishOnly": "npm run build",
     "prettier": "prettier --write \"**/*.{ts,tsx}\"",
     "storybook": "start-storybook --port 5000",
     "test": "jest --coverage --verbose",
     "tsc": "tsc",
-    "tsc:watch": "tsc -w",
-    "deploy-storybook": "storybook-to-ghpages"
+    "tsc:watch": "tsc -w"
   },
   "dependencies": {
     "@types/draft-js": "^0.10.40",
