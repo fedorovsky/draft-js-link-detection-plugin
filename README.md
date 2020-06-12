@@ -6,11 +6,13 @@
 ```npm i draft-js-link-detection-plugin```
 
 ### Usage:
-```$xslt
+
+```javascript
+import Editor from 'draft-js-plugins-editor';
 import createLinkDetectionPlugin from 'draft-js-link-detection-plugin';
 
-const linkifyPlugin = createLinkDetectionPlugin();
-const plugins = [linkifyPlugin];
+const linkDetectionPlugin = createLinkDetectionPlugin();
+const plugins = [linkDetectionPlugin];
 
 <Editor
     ref={editorRef}
