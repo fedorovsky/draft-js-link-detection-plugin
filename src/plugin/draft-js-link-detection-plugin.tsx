@@ -133,10 +133,6 @@ interface Options {
 const createLinkDetectionPlugin = (options: Options = {}) => {
   const { tlds, linkComponent } = options;
 
-  if (tlds?.length) {
-
-  }
-
   const linkify = tlds?.length ? linkifyIt().tlds(tlds) : linkifyIt();
 
   function isURL(text: string) {
