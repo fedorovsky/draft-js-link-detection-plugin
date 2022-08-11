@@ -7,7 +7,8 @@ import {
   ContentState,
   ContentBlock,
 } from 'draft-js';
-import isURL from '../utils/isURL';
+// import isURL from '../utils/isURL';
+import linkifyIt from 'linkify-it';
 import getUrlFromString from '../utils/getUrlFromString';
 
 /*
@@ -95,7 +96,7 @@ export function getCurrentLink(editorState: EditorState) {
   );
 }
 
-/* LINK COMPONENT */
+/* DEFAULT LINK COMPONENT */
 interface LinkProps {
   contentState: ContentState;
   entityKey: string;
@@ -126,12 +127,28 @@ function findLinkEntities(
   }, callback);
 }
 
-const createLinkDetectionPlugin = () => {
+interface Options {
+  tlds?: string[]; // accepted top-level domains
+  linkComponent?: React.ReactNode; // link component to render
+}
+const createLinkDetectionPlugin = (options: Options = {}) => {
+  const { tlds, linkComponent } = options;
+
+  if (tlds?.length) {
+
+  }
+
+  const linkify = tlds?.length ? linkifyIt().tlds(tlds) : linkifyIt();
+
+  function isURL(text: string) {
+    return !!linkify.match(text);
+  }
+
   return {
     decorators: [
       {
         strategy: findLinkEntities,
-        component: Link,
+        component: linkComponent ?? Link,
       },
     ],
     /* The method is always called when we change the data in the editor. */
@@ -205,19 +222,16 @@ const createLinkDetectionPlugin = () => {
           // We are no longer in a URL but the entity is still present. Remove it from
           // the current character so the linkifying "ends".
           const entityRange = new SelectionState({
-            anchorOffset: currentWordStart - 1,
+            anchorOffset: currentWordStart,
             anchorKey: cursorBlockKey,
-            focusOffset: currentWordStart,
+            focusOffset: currentWordEnd,
             focusKey: cursorBlockKey,
             isBackward: false,
-            hasFocus: true,
+            hasFocus: true
           });
+
           return EditorState.set(editorState, {
-            currentContent: Modifier.applyEntity(
-              editorState.getCurrentContent(),
-              entityRange,
-              null,
-            ),
+            currentContent: Modifier.applyEntity(editorState.getCurrentContent(), entityRange, null)
           });
         }
       }
