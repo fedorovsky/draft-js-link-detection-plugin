@@ -25,7 +25,7 @@
     "clean": "rimraf ./lib",
     "deploy-storybook": "storybook-to-ghpages",
     "lint": "eslint \"src/**/**.{ts,tsx}\"",
-    "prepare": "npm run build",
+    "prepublish": "npm run build",
     "prettier": "prettier --write \"**/*.{ts,tsx}\"",
     "storybook": "start-storybook --port 5000",
     "test": "jest --coverage --verbose",
