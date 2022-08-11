@@ -7,7 +7,6 @@ import {
   ContentState,
   ContentBlock,
 } from 'draft-js';
-// import isURL from '../utils/isURL';
 import linkifyIt from 'linkify-it';
 import getUrlFromString from '../utils/getUrlFromString';
 
