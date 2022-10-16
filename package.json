@@ -1,5 +1,5 @@
 {
-  "name": "draft-js-link-detection-plugin",
+  "name": "@dizsmek/draft-js-link-detection-plugin",
   "version": "0.0.4",
   "description": "draft-js-link-detection-plugin",
   "keywords": [
@@ -8,16 +8,16 @@
     "react",
     "typescript"
   ],
-  "homepage": "https://github.com/fedorovsky/draft-js-link-detection-plugin",
+  "homepage": "https://github.com/dizsmek/draft-js-link-detection-plugin",
   "bugs": {
-    "url": "https://github.com/fedorovsky/draft-js-link-detection-plugin/issues"
+    "url": "https://github.com/dizsmek/draft-js-link-detection-plugin/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:fedorovsky/draft-js-link-detection-plugin.git"
+    "url": "git@github.com:dizsmek/draft-js-link-detection-plugin.git"
   },
   "license": "MIT",
-  "author": "Anton Fedorovskyi",
+  "author": "Anton Fedorovskyi and Miklos Ballo",
   "main": "./lib/plugin/draft-js-link-detection-plugin.js",
   "types": "./lib/plugin/draft-js-link-detection-plugin.d.ts",
   "scripts": {
